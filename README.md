@@ -1,7 +1,7 @@
 # Big-Data-Machine-Learning-Task-1
 Analysis and prediction of ammonia gas in winter for geese raised in fermentation bed net 发酵床网养种鹅冬季氨气分析预测
 
-###一、实验目的
+### 一、实验目的
 发酵床网养种鹅冬季氨气分析预测
 根据联合国粮农组织（FAO）统计，禽肉消费比例逐年增长，从全球范围内看，禽肉将逐步取代猪肉的地位。鹅业作为我国传统养殖业，自21世纪以来，我国肉鹅出栏量一直位居世界首位，约占全球产量90%左右。
 原因：氨气主要是由粪便以及潮湿垫料的发酵产生。
@@ -12,7 +12,7 @@ Analysis and prediction of ammonia gas in winter for geese raised in fermentatio
 (5)氨气会损害工作人员的健康，影响周围居民的环境质量。
 因此，对发酵床网养种鹅冬季的氨气进行准确的分析预测具有重要意义。
 
-###二、实验原理
+### 二、实验原理
 （1）数据采集
 试验变送器布点
 舍外：鹅舍外屋檐下安装温湿度变送器和HOBO温湿度记录仪来记录鹅舍外的温湿度情况。
@@ -31,7 +31,7 @@ Analysis and prediction of ammonia gas in winter for geese raised in fermentatio
 ![image](https://github.com/user-attachments/assets/3b3d5e8d-aa89-44ad-ab9e-7b2ca4f447ba)
 式中：X∗为归一化处理后数据，X是采集的环境参数，Xmax、Xmin是环境参数中最大值与最小值。
 
-###三、实验步骤
+### 三、实验步骤
 ![image](https://github.com/user-attachments/assets/76288f3e-4109-41f1-bc2d-8d2132fa043a)
 （1）时间序列与监督学习
 在可以使用机器学习之前，时间序列预测问题必须重新构建成监督学习问题，从一个单纯的序列变成一对序列输入和输出。
@@ -66,7 +66,7 @@ GRU模型代码如右图所示，
 （5）评价与制图
 将RMSE与MAE作为评价指标，最后绘制预测值与真实值曲线图。
 
-###四、实验结果
+### 四、实验结果
 ![image](https://github.com/user-attachments/assets/7b79be42-2719-4f82-8e78-a7bfcb4172fc)
 LSTM-M.py训练集和测试集运行结果
 ![image](https://github.com/user-attachments/assets/a8232479-1aed-4a9a-90ba-25e125a13451)
@@ -78,7 +78,7 @@ GRU.py训练集和测试集运行结果
 ![image](https://github.com/user-attachments/assets/948a6246-dbba-4a33-9a23-9519d524574d)
 在epochs=250, batch_size=60参数下GRU预测值和测量值对比图
 
-###五、实验总结
+### 五、实验总结
 本实验通过系统的数据采集、预处理、模型搭建和训练，成功地建立了基于GRU的发酵床网养种鹅冬季氨气预测模型。绘制了预测值与真实值的曲线图，从图中可以看出，epochs=250, batch_size=60参数下GRU预测值和真实值更加接近，而epochs=500, batch_size=120参数下GRU预测值和真实值相差更加大。通过训练GRU模型，能够准确地预测发酵床网养种鹅冬季的氨气浓度变化趋势。评价指标RMSE（Root Mean Square Error）和MAE（Mean Absolute Error）均较低，表明模型预测值与真实值之间的误差较小。
 实验结果表明，GRU模型在处理时序数据方面表现出色，能够有效地预测鹅舍内的氨气浓度。这不仅有助于改善种鹅的养殖环境，减少氨气对种鹅健康和生产性能的影响，还能为鹅业养殖提供科学依据和技术支持。
 本实验还验证了数据预处理和模型调参在深度学习中的重要性。通过小时均值处理和数据归一化处理，提高了数据的质量和算法收敛速度；通过调整模型参数和采用Dropout方法，进一步优化了GRU模型的性能。
