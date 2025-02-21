@@ -32,7 +32,7 @@ Analysis and prediction of ammonia gas in winter for geese raised in fermentatio
 式中：X∗为归一化处理后数据，X是采集的环境参数，Xmax、Xmin是环境参数中最大值与最小值。
 
 ### 三、实验步骤
-![image](https://github.com/user-attachments/assets/76288f3e-4109-41f1-bc2d-8d2132fa043a)\
+![image](https://github.com/user-attachments/assets/76288f3e-4109-41f1-bc2d-8d2132fa043a)
 
 （1）时间序列与监督学习\
 在可以使用机器学习之前，时间序列预测问题必须重新构建成监督学习问题，从一个单纯的序列变成一对序列输入和输出。\
