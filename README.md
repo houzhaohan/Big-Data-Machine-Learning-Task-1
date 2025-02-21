@@ -18,21 +18,25 @@ Analysis and prediction of ammonia gas in winter for geese raised in fermentatio
 舍外：鹅舍外屋檐下安装温湿度变送器和HOBO温湿度记录仪来记录鹅舍外的温湿度情况。
 舍内：Fan2和Fan3中心位置安装温湿度变送器，离地高度1.65m；在种鹅生活区中心线等间距安装5组温湿度、NH3和CO2变送器，离网床高度1m；在湿帘处安装两组无线温湿度变送器，离网床高度1m；生活区变送器间距为7.2m，所有每隔一分钟记录一次数据。
 ![image](https://github.com/user-attachments/assets/ab731a83-e007-4fe3-9179-f79c4814dd89)
+
 环境监测系统
 （2）数据预处理
 • 小时均值处理：
 整理传感器每分钟采集到的数据，将1小时内测量到的60次数据加和平均处理，便于后续的数据处理和模型建立。
 小时均值处理公式：
 ![image](https://github.com/user-attachments/assets/f10f4d57-4642-4192-aef9-4680cea89020)
+
 式中：xh是小时均值处理后数据，xi是每分钟各采样点数据。
 • 数据归一化：
 为提高算法收敛速度和精度，使模型建立、学习、训练和预测的效果更好，需要对数据进行标准化处理。
 本实验采用数据归一化方法中的最大最小值归一化法，即线性函数归一化法。其原理是：通过使用数据集中数据的最大值和最小值进行标准化处理，使得处理后的数据集中在大于0小于1的区间范围内，具体公式为：
 ![image](https://github.com/user-attachments/assets/3b3d5e8d-aa89-44ad-ab9e-7b2ca4f447ba)
+
 式中：X∗为归一化处理后数据，X是采集的环境参数，Xmax、Xmin是环境参数中最大值与最小值。
 
 ### 三、实验步骤
 ![image](https://github.com/user-attachments/assets/76288f3e-4109-41f1-bc2d-8d2132fa043a)
+
 （1）时间序列与监督学习
 在可以使用机器学习之前，时间序列预测问题必须重新构建成监督学习问题，从一个单纯的序列变成一对序列输入和输出。
 定义一个名为series_to_supervised( )的新Python函数，它采用单变量或多变量时间序列，并将其作为监督学习数据集。
@@ -68,10 +72,13 @@ GRU模型代码如右图所示，
 
 ### 四、实验结果
 ![image](https://github.com/user-attachments/assets/7b79be42-2719-4f82-8e78-a7bfcb4172fc)
+
 LSTM-M.py训练集和测试集运行结果
 ![image](https://github.com/user-attachments/assets/a8232479-1aed-4a9a-90ba-25e125a13451)
+
 LSTM-M.py运行后NH3预测值和测量值比较结果
 ![image](https://github.com/user-attachments/assets/4c8b0c29-4ac9-4220-94bb-45ebccd6c6b0)
+
 GRU.py训练集和测试集运行结果
 ![image](https://github.com/user-attachments/assets/e99c5ced-4efe-45d6-9242-855aca1de4c0)
 在epochs=500, batch_size=120参数下GRU预测值和测量值对比图
